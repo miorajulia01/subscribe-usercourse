@@ -1,4 +1,4 @@
-package com.example.demo.endpoint.rest.controller;
+package com.example.demo.endpoint.event.controller;
 
 import com.example.demo.endpoint.event.EventProducer;
 import com.example.demo.endpoint.event.model.SendEmailRequested;
