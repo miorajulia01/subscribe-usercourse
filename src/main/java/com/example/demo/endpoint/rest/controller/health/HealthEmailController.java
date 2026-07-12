@@ -4,8 +4,6 @@ import static com.example.demo.endpoint.rest.controller.health.PingController.OK
 import static java.io.File.createTempFile;
 
 import com.example.demo.PojaGenerated;
-import com.example.demo.endpoint.event.EventProducer;
-import com.example.demo.endpoint.event.model.SendEmailRequested;
 import com.example.demo.mail.Email;
 import com.example.demo.mail.Mailer;
 import jakarta.mail.internet.AddressException;
@@ -13,7 +11,6 @@ import jakarta.mail.internet.InternetAddress;
 import java.io.IOException;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.SneakyThrows;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -78,19 +75,5 @@ public class HealthEmailController {
             null,
             List.of(createTempFile("attachment", ".txt"))));
     return OK;
-  }
-
-  @RestController
-  @AllArgsConstructor
-  public static class HelloWorldController {
-    private final EventProducer<SendEmailRequested> eventProducer;
-
-    @GetMapping("/hello")
-    @SneakyThrows
-    public String helloWorld(@RequestParam String to) {
-      var event = SendEmailRequested.builder().to(to).build();
-      eventProducer.accept(List.of(event));
-      return "... world!";
-    }
   }
 }
