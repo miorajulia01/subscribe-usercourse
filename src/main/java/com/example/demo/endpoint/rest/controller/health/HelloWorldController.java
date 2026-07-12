@@ -1,7 +1,7 @@
 package com.example.demo.endpoint.rest.controller.health;
 
 import com.example.demo.endpoint.event.EventProducer;
-import com.example.demo.endpoint.event.model.SendEmailRequested;
+import com.example.demo.endpoint.event.model.controller.SendEmailRequested;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

@@ -1,5 +1,6 @@
-package com.example.demo.endpoint.event.model;
+package com.example.demo.endpoint.event.model.controller;
 
+import com.example.demo.endpoint.event.model.PojaEvent;
 import java.time.Duration;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

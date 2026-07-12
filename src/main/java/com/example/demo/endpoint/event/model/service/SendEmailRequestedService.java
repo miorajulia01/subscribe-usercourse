@@ -1,5 +1,6 @@
-package com.example.demo.endpoint.event.model;
+package com.example.demo.endpoint.event.model.service;
 
+import com.example.demo.endpoint.event.model.controller.SendEmailRequested;
 import com.example.demo.mail.Email;
 import com.example.demo.mail.Mailer;
 import jakarta.mail.internet.InternetAddress;
