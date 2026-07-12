@@ -1,4 +1,4 @@
-package com.example.demo.endpoint.rest.controller.health;
+package com.example.demo.endpoint.event.controller;
 
 import com.example.demo.endpoint.event.EventProducer;
 import com.example.demo.endpoint.event.model.SendEmailRequested;
