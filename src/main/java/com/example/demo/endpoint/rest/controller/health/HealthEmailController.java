@@ -80,17 +80,17 @@ public class HealthEmailController {
     return OK;
   }
 
-    @RestController
-    @AllArgsConstructor
-    public static class HelloWorldController {
-      private final EventProducer<SendEmailRequested> eventProducer;
+  @RestController
+  @AllArgsConstructor
+  public static class HelloWorldController {
+    private final EventProducer<SendEmailRequested> eventProducer;
 
-      @GetMapping("/hello")
-      @SneakyThrows
-      public String helloWorld(@RequestParam String to) {
-        var event = SendEmailRequested.builder().to(to).build();
-        eventProducer.accept(List.of(event));
-        return "... world!";
-      }
+    @GetMapping("/hello")
+    @SneakyThrows
+    public String helloWorld(@RequestParam String to) {
+      var event = SendEmailRequested.builder().to(to).build();
+      eventProducer.accept(List.of(event));
+      return "... world!";
     }
+  }
 }
